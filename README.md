@@ -1,1 +1,13 @@
 # qa_python
+
+- test_add_new_book_success
+- test_set_book_genre_success
+- test_get_book_genre_not_set
+- test_books_with_specific_genre_print_book
+- test_get_book_genre
+- test_get_books_genre
+- test_get_books_for_children_with_children_books
+- test_add_book_in_favorites
+- test_add_book_in_favorites_not_repeated
+- test_get_list_of_favorites_book
+- test_delete_book_from_favorite_success
