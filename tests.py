@@ -121,7 +121,6 @@ class TestBooksCollector:
         collector.add_book_in_favorites('Мастер и Маргарита')
         collector.add_book_in_favorites('Анна Каренина')
 
-
         expected_books_favorites =[
             'Мастер и Маргарита',
             'Анна Каренина']
