@@ -8,10 +8,14 @@ class TestBooksCollector:
     def test_add_new_book_success(self):
         collector = BooksCollector()
         collector.add_new_book('ф')
-        collector.add_new_book('Жареные зеленые помидоры в кафе Полустанок')
 
         assert 'ф' in collector.books_genre
-        assert len(collector.books_genre) == 1
+
+    def test_long_book_name_not_added(self):
+        collector = BooksCollector()
+        collector.add_new_book('Жареные зеленые помидоры в кафе Полустанок')
+
+        assert len(collector.books_genre) == 0
 
     def test_set_book_genre_success(self):
         collector = BooksCollector()
@@ -22,10 +26,10 @@ class TestBooksCollector:
 
     def test_get_book_genre_not_set(self):
         collector = BooksCollector()
-        collector.add_new_book('Мастер и Маргарита')
-        collector.set_book_genre('Мастер и Маргарита', 'Фантастика')
+        collector.add_new_book('Неизвестная книга')
 
-        assert collector.get_book_genre('Мастер и Маргарита') == 'Фантастика'
+        assert collector.get_book_genre('Неизвестная книга') == ''
+
 
     def test_books_with_specific_genre_print_book(self):
         collector = BooksCollector()
@@ -112,9 +116,11 @@ class TestBooksCollector:
     def test_get_list_of_favorites_book(self):
         collector = BooksCollector()
         collector.add_new_book('Мастер и Маргарита')
-        collector.add_book_in_favorites('Мастер и Маргарита')
         collector.add_new_book('Анна Каренина')
+        collector.add_new_book('1984')
+        collector.add_book_in_favorites('Мастер и Маргарита')
         collector.add_book_in_favorites('Анна Каренина')
+
 
         expected_books_favorites =[
             'Мастер и Маргарита',
