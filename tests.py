@@ -112,7 +112,6 @@ class TestBooksCollector:
         assert collector.favorites == expected_books_favorites
 
 
-
     def test_get_list_of_favorites_book(self):
         collector = BooksCollector()
         collector.add_new_book('Мастер и Маргарита')
