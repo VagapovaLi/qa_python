@@ -124,4 +124,4 @@ class TestBooksCollector:
             'Мастер и Маргарита',
             'Анна Каренина']
 
-        assert collector.favorites == expected_books_favorites
+        assert collector.get_list_of_favorites_books() == expected_books_favorites
